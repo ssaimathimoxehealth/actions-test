@@ -5,7 +5,7 @@ name: POC Run Test
 
 jobs:
   build:
-
+    # The type of runner that job will run on
     runs-on: ubuntu-latest
 
     steps:
@@ -20,9 +20,10 @@ jobs:
         
     - name: Install python 
       run: |        
-        py -m pipenv install --dev
-        pipenv install pytest
+        python3 -m pipenv install --dev
+        python3 -m pipenv install pytest
+        python3 -m pipenv install requests
         
     - name: Test with pytest
       run: |
-        pytest -vs -m for_github_action_trigger
+        python3 -m pipenv run pytest -vs -m for_github_action_trigger
