@@ -1,0 +1,14 @@
+# Python and Pytest
+.vscode
+*.pyc
+__pycache__
+.pytest_cache
+allure_reports
+allure_results_jenkins
+allure-report
+asserts
+geckodriver.log
+setting.cfg
+.ipynb_checkpoints
+.env
+*.ipynb
