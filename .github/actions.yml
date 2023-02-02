@@ -1,0 +1,28 @@
+# This workflow will install Python dependencies, run tests and lint with a single version of Python
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python
+
+name: POC Run Test
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: checkout repo contant
+    - uses: actions/checkout@v3 # checkout the repository content to github runner
+    
+    - name: Set up Python 3.9
+      uses: actions/setup-python@v3 
+      with:
+        python-version: "3.9" # install the python version needed
+        cache: "pipenv" # will cache virtualenv directory
+        
+    - name: Install python 
+      run: |        
+        py -m pipenv install --dev
+        pipenv install pytest
+        
+    - name: Test with pytest
+      run: |
+        pytest -vs -m for_github_action_trigger
