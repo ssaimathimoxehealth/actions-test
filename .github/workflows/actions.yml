@@ -23,6 +23,7 @@ jobs:
         
     - name: Install python 
       run: |        
+        python3 -m pip install --user pipenv
         python3 -m pipenv install --dev
         python3 -m pipenv install pytest
         python3 -m pipenv install requests
