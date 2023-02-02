@@ -10,21 +10,21 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: checkout repo contant
+      name: Checkout repo contant
       uses: actions/checkout@v3 # checkout the repository content to github runner
     
-    - name: Set up Python 3.9
+      name: Set up Python 3.9
       uses: actions/setup-python@v3 
       with:
         python-version: "3.9" # install the python version needed
         cache: "pipenv" # will cache virtualenv directory
         
-    - name: Install python 
+      name: Install python 
       run: |        
         python3 -m pipenv install --dev
         python3 -m pipenv install pytest
         python3 -m pipenv install requests
         
-    - name: Test with pytest
+      name: Test with pytest
       run: |
         python3 -m pipenv run pytest -vs -m for_github_actions_trigger

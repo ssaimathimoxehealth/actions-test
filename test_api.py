@@ -12,4 +12,3 @@ def test_get_products_list():
     )
 
     assert response.status_code == 200
-    assert response.status_code == 200
