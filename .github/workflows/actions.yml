@@ -27,4 +27,4 @@ jobs:
         
     - name: Test with pytest
       run: |
-        python3 -m pipenv run pytest -vs -m for_github_action_trigger
+        python3 -m pipenv run pytest -vs -m for_github_actions_trigger
