@@ -2,17 +2,15 @@
 # For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python
 name: POC Run Test
 
-on:
-  pull_request:
-    types: [opened, edited]
+on: pull_request
 
 jobs:
-  build:
+  test:
     # The type of runner that job will run on
     runs-on: ubuntu-latest
 
     steps:
-    - name: checkout repo contant
+    - name: Checkout repo content
       uses: actions/checkout@v3 # checkout the repository content to github runner
     
     - name: Set up Python 3.9
@@ -28,6 +26,6 @@ jobs:
         python3 -m pipenv install pytest
         python3 -m pipenv install requests
         
-    - name: Test with pytest
+    - name: Run tests
       run: |
-        python3 -m pipenv run pytest -vs -m for_github_action_trigger
+        python3 -m pipenv run pytest -vs -m for_github_actions_trigger
