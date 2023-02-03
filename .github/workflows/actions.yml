@@ -24,7 +24,8 @@ jobs:
         python3 -m pipenv install --dev
         python3 -m pipenv install pytest
         python3 -m pipenv install requests
+        python3 -m pipenv install allure-pytest
         
     - name: Run tests
       run: |
-        python3 -m pipenv run pytest -vs -m for_github_actions_trigger
+        python3 -m pipenv run pytest -vs -m for_github_actions_trigger --alluredir allure_results_jenkins --clean-alluredir'
