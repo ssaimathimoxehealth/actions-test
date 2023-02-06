@@ -6,6 +6,7 @@ on: pull_request
 
 jobs:
   test:
+    name: Run test
     # The type of runner that job will run on
     runs-on: ubuntu-latest
 
